@@ -5,7 +5,7 @@
 /*
 body {
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,26,166,1) 35%, rgba(0,212,255,1) 100%); 
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,26,166,1) 35%, rgba(0,212,255,1) 100%);
     color: #fff;
 }
 a {
@@ -13,9 +13,32 @@ a {
 }
 .bg-nav-p {
 background: rgb(29,38,91);
-background: linear-gradient(90deg, rgba(29,38,91,1) 0%, rgba(30,26,166,1) 88%, rgba(0,108,255,1) 100%); 
+background: linear-gradient(90deg, rgba(29,38,91,1) 0%, rgba(30,26,166,1) 88%, rgba(0,108,255,1) 100%);
 }
 .color-1 {
     color: #333 !important;
 }
 */
+.color-1 {
+    color: #fff !important;
+    text-shadow: 10px 5px 5px #000000;
+    background-color: #44444490;
+}
+.fondo {
+  background: url(back-header.jpg) no-repeat center top fixed;
+  background-size: cover;
+  padding: 160px 0;
+  display: block;
+  position: fixed;
+  width: 100%;
+}
+.navbar.bg-light {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+.container-index {
+  top: 150px;
+  position: relative;
+  display: block;
+}
