@@ -29,8 +29,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col">
         <div class="card" style="width: 18rem;">
             <%= image_tag('s.jfif', class: 'img-fluid')%>
@@ -62,3 +60,15 @@
         </div>
     </div>
 </div>
+<% @pins.each do |pin| %>
+<div class="col">
+    <div class="card" style="width: 18rem;">
+        <%= image_tag('db.jpg', class: 'img-fluid')%>
+        <div class="card-body">
+            <h5 class="card-title text-center"><%= pin.title %></h5>
+            <p class="card-text"><%= pin.description %></p>
+            <a href="#" class="btn btn-primary mx-auto">Mas información</a>
+        </div>
+    </div>
+</div>
+<% end %>

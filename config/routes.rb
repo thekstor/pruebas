@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pins
+  resources :contacts
   get 'pages/index'
   get 'pages/about'
   get 'pages/contact'
