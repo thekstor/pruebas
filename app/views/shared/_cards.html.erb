@@ -1,74 +1,14 @@
 <div class="row">
+    <% @pins.each do |pin| %>
     <div class="col">
         <div class="card" style="width: 18rem;">
-            <%= image_tag('hda.jpg', class: 'img-fluid')%>
+            <img src="<%= pin.image %>" alt="<%= pin.title %>" class="img-fluid">
             <div class="card-body">
-                <h5 class="card-title text-center">Hora de aventra</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title text-center"><%= pin.title %></h5>
+                <p class="card-text"><%= pin.description %></p>
                 <a href="#" class="btn btn-primary mx-auto">Mas información</a>
             </div>
         </div>
     </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <%= image_tag('c.webp', class: 'img-fluid')%>
-            <div class="card-body">
-                <h5 class="card-title text-center">Clarence</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Mas información</a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <%= image_tag('g.jpg', class: 'img-fluid')%>
-            <div class="card-body">
-                <h5 class="card-title text-center">Gumball</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Mas información</a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <%= image_tag('s.jfif', class: 'img-fluid')%>
-            <div class="card-body">
-                <h5 class="card-title text-center">Los Simpsons</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Mas información</a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <%= image_tag('gf.jpg', class: 'img-fluid')%>
-            <div class="card-body">
-                <h5 class="card-title text-center">Gravity falls</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary mx-auto">Mas información</a>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <%= image_tag('db.jpg', class: 'img-fluid')%>
-            <div class="card-body">
-                <h5 class="card-title text-center">Dragon ball super</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary mx-auto">Mas información</a>
-            </div>
-        </div>
-    </div>
+    <% end %>
 </div>
-<% @pins.each do |pin| %>
-<div class="col">
-    <div class="card" style="width: 18rem;">
-        <%= image_tag('db.jpg', class: 'img-fluid')%>
-        <div class="card-body">
-            <h5 class="card-title text-center"><%= pin.title %></h5>
-            <p class="card-text"><%= pin.description %></p>
-            <a href="#" class="btn btn-primary mx-auto">Mas información</a>
-        </div>
-    </div>
-</div>
-<% end %>
