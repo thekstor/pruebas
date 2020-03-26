@@ -1,7 +1,6 @@
-<div class="container">
   <%= form_with(model: pin, local: true) do |form| %>
     <% if pin.errors.any? %>
-      <div id="error_explanation alert alert-secondary" role="alert">
+      <div id="error_explanation" class="alert alert-secondary" role="alert">
         <h2>verifique los siguientes datos para continuar:</h2>
         <ul>
           <% pin.errors.full_messages.each do |message| %>
@@ -11,19 +10,18 @@
       </div>
     <% end %>
     <div class="form-group">
-        <%= form.label :title %>
+        <%= form.label :title, 'Titulo' %>
         <%= form.text_field :title, class: 'form-control', placeholder:'Titulo' %>
     </div>
     <div class="form-group">
-      <%= form.label :description %>
+      <%= form.label :description, 'Descripción' %>
       <%= form.text_area :description, class: 'form-control', placeholder:'Descripción' %>
     </div>
     <div class="form-group">
-      <%= form.label :image %>
+      <%= form.label :image, 'Url imagen' %>
       <%= form.text_field :image, class: 'form-control', placeholder:'Url Imagen' %>
     </div>
     <div class="form-group">
-      <%= form.submit %>
+      <%= form.submit 'Agregar', class: 'btn btn-primary' %>
     </div>
   <% end %>
-</div>

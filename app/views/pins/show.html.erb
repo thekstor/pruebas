@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container mt-6">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @pin.title %>
-</p>
+  <p>
+    <strong>Titulo:</strong>
+    <%= @pin.title %>
+  </p>
 
-<p>
-  <strong>Descripción:</strong>
-  <%= @pin.description %>
-</p>
+  <p>
+    <strong>Descripción:</strong>
+    <%= @pin.description %>
+  </p>
 
-<p>
-  <strong>Imnagen:</strong>
-  <%= @pin.image %>
-</p>
+  <p>
+    <strong>Imagen:</strong>
+    <%= @pin.image %>
+  </p>
 
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+  <%= link_to 'Edit', edit_pin_path(@pin), class: 'btn btn-secondary' %> |
+  <%= link_to 'Back', pins_path, class: 'btn btn-secondary' %>
+</div>
