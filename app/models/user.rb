@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   has_many :pins, dependent: :destroy
+  has_one_attached :image
 end

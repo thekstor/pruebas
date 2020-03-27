@@ -1,12 +1,20 @@
 <div class="row">
     <% @pins.each do |pin| %>
-    <div class="col-lg-4 col-md-6 mb-3">
+      <div class="col-lg-4 col-md-6 mb-3">
         <div class="card mx-auto" style="width: 18rem;">
             <img src="<%= pin.image %>" alt="<%= pin.title %>" class="img-fluid">
             <div class="card-body">
                 <h5 class="card-title text-center"><%= pin.title %></h5>
                 <p class="card-text"><%= pin.description %></p>
-                <a href="#" class="btn btn-primary mx-auto">Mas información</a>
+                <div class="text-center">
+                  <%= link_to 'Ver', pin, class: 'btn btn-primary' %>
+                  <% if can? :update, pin %>
+                    <%= link_to 'Editar', edit_pin_path(pin), class: 'btn btn-success' %>
+                  <% end %>
+                  <% if can? :destroy, pin %>
+                    <%= link_to 'Eliminar', pin, method: :delete, data: { confirm: '¿Estas seguro?' }, class: 'btn btn-danger' %>
+                  <% end %>
+                </div>
             </div>
         </div>
     </div>
