@@ -1,7 +1,7 @@
 <%= form_with(model: contact, local: true) do |form| %>
   <% if contact.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+    <div id="error_explanation" class="alert alert-secondary" role="alert">
+      <h3><%= pluralize(contact.errors.count, "error") %> verifica los siguientes datos:</h3>
 
       <ul>
         <% contact.errors.full_messages.each do |message| %>
@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field form-group">
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :mail %>
-    <%= form.text_field :mail %>
+    <%= form.text_field :mail, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message %>
+  <div class="field form-group">
+    <%= form.label :message, 'Mensaje' %>
+    <%= form.text_area :message, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit 'Enviar contacto', class: 'btn btn-primary' %>
   </div>
 <% end %>

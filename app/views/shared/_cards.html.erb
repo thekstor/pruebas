@@ -2,7 +2,9 @@
     <% @pins.each do |pin| %>
       <div class="col-lg-4 col-md-6 mb-3">
         <div class="card mx-auto" style="width: 18rem;">
-            <img src="<%= pin.image %>" alt="<%= pin.title %>" class="img-fluid">
+            <% if pin.images.attached? %>
+              <%= image_tag pin.images[0], class: "img-fluid" %>
+            <% end %>
             <div class="card-body">
                 <h5 class="card-title text-center"><%= pin.title %></h5>
                 <p class="card-text"><%= pin.description %></p>

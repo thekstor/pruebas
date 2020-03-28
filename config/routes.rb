@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :pins
+  resources :pins do
+    delete 'delete_image/:image_id', on: :member, to: 'pins#delete_image', as: 'delete_image'
+  end
+
   resources :contacts
   get 'pages/index'
   get 'pages/about'

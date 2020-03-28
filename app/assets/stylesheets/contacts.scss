@@ -1,3 +1,15 @@
 // Place all the styles related to the Contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.fondo-contacto {
+  background: url(back-header.jpg) no-repeat center top fixed;
+  background-size: cover;
+  margin-top: 30px;
+  padding: 180px 0;
+  display: block;
+  width: 100%;
+}
+.sombra {
+  text-shadow: 10px 5px 5px #000000;
+}

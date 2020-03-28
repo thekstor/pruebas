@@ -1,7 +1,11 @@
-<div class="container mt-6">
+<div class="fondo">
+</div>
+<div class="container mt-5 pt-5">
   <div class="row">
     <div class="col">
-      <p id="notice"><%= notice %></p>
+      <% if flash[:notice] %>
+        <p id="notice" class="alert alert-dark"><%= notice %></p>
+      <% end %>
       <p>
         <strong>Titulo:</strong>
         <%= @pin.title %>
@@ -22,20 +26,26 @@
           </div>
         </div>
         <div class="col-12 mt-4">
-          <h2>holi</h2>
+          <div class="row">
+            <% @pin.images.each do |image| %>
+              <div class="col-4">
+                <%= image_tag image, class: 'w-100' %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <img src="<%= @pin.image %>" class="img-fluid" alt="<%= @pin.title %>">
+      <%= image_tag @pin.images[0], class: 'img-fluid' %>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <% if can? :update, @pin %>
-        <%= link_to 'Edit', edit_pin_path(@pin), class: 'btn btn-secondary' %> |
+        <%= link_to 'Editar', edit_pin_path(@pin), class: 'btn btn-secondary' %> |
       <% end %>
-      <%= link_to 'Back', pins_path, class: 'btn btn-secondary' %>
+      <%= link_to 'Volver', pins_path, class: 'btn btn-secondary' %>
     </div>
   </div>
 </div>

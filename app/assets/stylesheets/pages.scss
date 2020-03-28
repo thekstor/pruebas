@@ -2,34 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-/*
-body {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,26,166,1) 35%, rgba(0,212,255,1) 100%);
-    color: #fff;
-}
-a {
-    color: #fff !important;
-}
-.bg-nav-p {
-background: rgb(29,38,91);
-background: linear-gradient(90deg, rgba(29,38,91,1) 0%, rgba(30,26,166,1) 88%, rgba(0,108,255,1) 100%);
-}
-.color-1 {
-    color: #333 !important;
-}
-*/
 .color-1 {
   color: #fff !important;
-  /*text-shadow: 10px 5px 5px #000000;*/
   font-size: 80px;
+  font-weight: 500;
+}
+.color-2 {
+  color: #fff !important;
+  font-size: 30px;
   font-weight: 500;
 }
 .fondo {
   background: #349aed;
   background: linear-gradient(145deg, #349aed 50%, #34d8ed 100%);
-  /*background: url(back-header.jpg) no-repeat center top fixed;
-  background-size: cover;*/
   padding: 220px 0;
   display: block;
   position: fixed;

@@ -29,7 +29,7 @@ class PinsController < ApplicationController
     @pin.user = current_user
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
+        format.html { redirect_to @pin, notice: 'Pin creado exitosamente.' }
         format.json { render :show, status: :created, location: @pin }
       else
         format.html { render :new }
@@ -62,6 +62,16 @@ class PinsController < ApplicationController
     end
   end
 
+  def delete_image
+    begin
+      @image = ActiveStorage::Attachment.find(params[:image_id])
+      @image.purge
+      redirect_to pin_path(@pin), notice: 'Imagen eliminada con éxito'
+    rescue ActiveRecord::RecordNotFound
+      redirect_to pin_path(@pin), alert: 'Error al eliminar la imagen'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
@@ -70,6 +80,6 @@ class PinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pin_params
-      params.require(:pin).permit(:title, :description, :image)
+      params.require(:pin).permit(:title, :description, images: [])
     end
 end

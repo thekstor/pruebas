@@ -17,11 +17,22 @@
       <%= form.label :description, 'Descripción' %>
       <%= form.text_area :description, class: 'form-control', placeholder:'Descripción' %>
     </div>
-    <div class="form-group">
-      <%= form.label :image, 'Url imagen' %>
-      <%= form.text_field :image, class: 'form-control', placeholder:'Url Imagen' %>
+    <div class="field custom-file form-group">
+      <%= form.label :images, class: "custom-file-label" %>
+      <%= form.file_field :images, multiple: true, class: "custom-file-input" %>
     </div>
-    <div class="form-group">
+    <% if @pin.images.attached? %>
+      <div class="row mt-3">
+        <% @pin.images.each do |image| %>
+          <div class="col-6 col-md-2 text-center">
+            <%= image_tag image, class: "w-100" %>
+            <br>
+            <%= link_to 'Remover', delete_image_pin_path(@pin, image), method: :delete, data: { confirm: '¿Está seguro?' }, class: 'btn btn-danger' %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="form-group mt-3">
       <%= form.submit 'Agregar', class: 'btn btn-primary' %>
     </div>
   <% end %>

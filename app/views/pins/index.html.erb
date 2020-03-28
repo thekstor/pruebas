@@ -2,7 +2,13 @@
 </div>
 <header class="container-index">
   <h1 class="display-4 color-1 text-center">Dibujos animados</h1>
+  <h5 class="display-4 color-2 text-center">vulputate eget pellentesque at, ultricies in leo. Donec sapien mi</h5>
 </header>
 <div class="container container-index">
   <%= render 'shared/cards' %>
+  <div class="row">
+    <div class="col my-4 text-center">
+      <%= link_to  "Agregar Pin", { controller: 'pins', action: 'new'}, class: 'btn btn-primary' %>
+    </div>
+  </div>
 </div>
